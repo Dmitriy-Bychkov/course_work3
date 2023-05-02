@@ -6,7 +6,6 @@ class BankData:
             from_account_number = 'XXXX XXXX XXXX XXXX'
         self.from_account_number = from_account_number
 
-
     def get_right_data(self):
         '''
         Возвращает дату в нужном нам виде ДД.ММ.ГГГГ.
@@ -18,7 +17,6 @@ class BankData:
 
         return converted_data
 
-
     def mask_end_account_number(self):
         '''
         Преобразует и выводит строку с назначением платежа 'Куда'
@@ -29,7 +27,6 @@ class BankData:
         numbers_mask = '*' * 2 + splitted_str[-4:]
 
         return ' '.join(self.to_account_number.split(' ')[:-1]) + ' ' + numbers_mask
-
 
     def mask_full_account_number(self):
         '''
@@ -43,7 +40,6 @@ class BankData:
         finished_str = ' '.join([str_with_mask[i:i + 4] for i in range(0, len(str_with_mask), 4)])
 
         return ' '.join(self.from_account_number.split(' ')[:-1]) + ' ' + finished_str
-
 
     def __repr__(self):
         return f'{self.__class__.__name__} ' \
